@@ -1,0 +1,22 @@
+[0921 16:40:59 @multigpu.py:50] Building graph for training tower 0...
+[0921 16:40:59 @multigpu.py:50] Building graph for training tower 0...
+[0921 16:40:59 @_common.py:61] conv1 input: [None, 40, 40, 3]
+major: 6 minor: 1 memoryClockRate (GHz) 1.8225
+pciBusID 0000:04:00.0
+Total memory: 7.92GiB
+Free memory: 7.73GiB
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:972] DMA: 0 1
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:982] 0:   Y Y
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:982] 1:   Y Y
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:1041] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX 1080, pci bus id: 0000:03:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:1041] Creating TensorFlow device (/gpu:1) -> (device: 1, name: GeForce GTX 1080, pci bus id: 0000:04:00.0)
+[0921 17:15:03 @modelutils.py:22] Model Parameters:
+conv0/W:0: shape=[3, 3, 1, 32], dim=288
+conv0/b:0: shape=[32], dim=32
+conv0/alpha:0: shape=[], dim=1
+conv1/W:0: shape=[3, 3, 32, 32], dim=9216
+conv1/b:0: shape=[32], dim=32
+conv1/alpha:0: shape=[], dim=1
+conv2/W:0: shape=[3, 3, 32, 32], dim=9216
+conv2/b:0: shape=[32], dim=32
+conv2/alpha:0: shape=[], dim=1

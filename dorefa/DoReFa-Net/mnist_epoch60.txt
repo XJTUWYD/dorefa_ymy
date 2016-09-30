@@ -1,0 +1,761 @@
+a-no-MacBook-Pro:dorefa-net yamaya$ python ./mnist-dorefa.py
+[0916 11:53:07 @utils.py:111] TENSORPACK_DATASET not set, using /Users/yamaya/Documents/tensorpack-master/examples/DoReFa-Net/tensorpack/dataflow/dataset for dataset.
+[0916 11:53:07 @mnist.py:26] Downloading mnist data to /Users/yamaya/Documents/tensorpack-master/examples/DoReFa-Net/tensorpack/dataflow/dataset/mnist_data/train-images-idx3-ubyte.gz...
+>> Downloading train-images-idx3-ubyte.gz 100.0%
+Succesfully downloaded train-images-idx3-ubyte.gz 9912422 bytes.
+[0916 11:53:13 @mnist.py:26] Downloading mnist data to /Users/yamaya/Documents/tensorpack-master/examples/DoReFa-Net/tensorpack/dataflow/dataset/mnist_data/train-labels-idx1-ubyte.gz...
+>> Downloading train-labels-idx1-ubyte.gz 100.0%
+Succesfully downloaded train-labels-idx1-ubyte.gz 28881 bytes.
+[0916 11:53:13 @mnist.py:26] Downloading mnist data to /Users/yamaya/Documents/tensorpack-master/examples/DoReFa-Net/tensorpack/dataflow/dataset/mnist_data/t10k-images-idx3-ubyte.gz...
+>> Downloading t10k-images-idx3-ubyte.gz 100.0%
+Succesfully downloaded t10k-images-idx3-ubyte.gz 1648877 bytes.
+[0916 11:53:16 @mnist.py:26] Downloading mnist data to /Users/yamaya/Documents/tensorpack-master/examples/DoReFa-Net/tensorpack/dataflow/dataset/mnist_data/t10k-labels-idx1-ubyte.gz...
+>> Downloading t10k-labels-idx1-ubyte.gz 100.0%
+Succesfully downloaded t10k-labels-idx1-ubyte.gz 4542 bytes.
+[0916 11:53:18 @model_desc.py:118] WRN _build_graph(self, input_vars, is_training) is deprecated! Use _build_graph(self, input_vars) and get_current_tower_context().is_training instead.
+[0916 11:53:18 @_common.py:61] conv0 input: [None, 28, 28, 1]
+[0916 11:53:18 @_common.py:69] conv0 output: [None, 26, 26, 32]
+[0916 11:53:18 @_common.py:61] pool0 input: [None, 26, 26, 32]
+[0916 11:53:18 @_common.py:69] pool0 output: [None, 13, 13, 32]
+[0916 11:53:18 @_common.py:61] conv1 input: [None, 13, 13, 32]
+[0916 11:53:18 @mnist-dorefa.py:60] Binarizing weight conv1/W
+[0916 11:53:18 @_common.py:69] conv1 output: [None, 13, 13, 32]
+[0916 11:53:18 @_common.py:61] conv2 input: [None, 13, 13, 32]
+[0916 11:53:18 @mnist-dorefa.py:60] Binarizing weight conv2/W
+[0916 11:53:18 @_common.py:69] conv2 output: [None, 11, 11, 32]
+[0916 11:53:18 @_common.py:61] pool1 input: [None, 11, 11, 32]
+[0916 11:53:18 @_common.py:69] pool1 output: [None, 5, 5, 32]
+[0916 11:53:18 @_common.py:61] conv3 input: [None, 5, 5, 32]
+[0916 11:53:18 @mnist-dorefa.py:60] Binarizing weight conv3/W
+[0916 11:53:18 @_common.py:69] conv3 output: [None, 3, 3, 32]
+[0916 11:53:18 @_common.py:61] fc0 input: [None, 3, 3, 32]
+[0916 11:53:18 @mnist-dorefa.py:60] Binarizing weight fc0/W
+[0916 11:53:18 @_common.py:69] fc0 output: [None, 512]
+[0916 11:53:18 @_common.py:61] fc1 input: [None, 512]
+[0916 11:53:18 @mnist-dorefa.py:60] Binarizing weight fc1/W
+[0916 11:53:18 @_common.py:69] fc1 output: [None, 10]
+[0916 11:53:18 @regularize.py:17] Apply regularizer for fc0/W:0
+[0916 11:53:18 @regularize.py:17] Apply regularizer for fc1/W:0
+[0916 11:53:20 @modelutils.py:22] Model Parameters:
+conv0/W:0: shape=[3, 3, 1, 32], dim=288
+conv0/b:0: shape=[32], dim=32
+conv0/alpha:0: shape=[], dim=1
+conv1/W:0: shape=[3, 3, 32, 32], dim=9216
+conv1/b:0: shape=[32], dim=32
+conv1/alpha:0: shape=[], dim=1
+bn2/beta:0: shape=[32], dim=32
+bn2/gamma:0: shape=[32], dim=32
+conv2/W:0: shape=[3, 3, 32, 32], dim=9216
+conv2/b:0: shape=[32], dim=32
+conv2/alpha:0: shape=[], dim=1
+bn3/beta:0: shape=[32], dim=32
+bn3/gamma:0: shape=[32], dim=32
+conv3/W:0: shape=[3, 3, 32, 32], dim=9216
+conv3/b:0: shape=[32], dim=32
+conv3/alpha:0: shape=[], dim=1
+bn4/beta:0: shape=[32], dim=32
+bn4/gamma:0: shape=[32], dim=32
+fc0/W:0: shape=[288, 512], dim=147456
+fc0/b:0: shape=[512], dim=512
+bn5/beta:0: shape=[512], dim=512
+bn5/gamma:0: shape=[512], dim=512
+fc1/W:0: shape=[512, 10], dim=5120
+fc1/b:0: shape=[10], dim=10
+Total param=182382 (0.695732 MB assuming all float32)
+[0916 11:53:24 @base.py:106] Setup callbacks ...
+[0916 11:53:24 @base.py:111] Building graph for predictor tower 0...
+[0916 11:53:24 @model_desc.py:118] WRN _build_graph(self, input_vars, is_training) is deprecated! Use _build_graph(self, input_vars) and get_current_tower_context().is_training instead.
+[0916 11:53:24 @mnist-dorefa.py:60] Binarizing weight conv1/W
+[0916 11:53:24 @mnist-dorefa.py:60] Binarizing weight towerp0/conv1/mul
+[0916 11:53:24 @mnist-dorefa.py:60] Binarizing weight conv2/W
+[0916 11:53:24 @mnist-dorefa.py:60] Binarizing weight towerp0/conv2/mul
+[0916 11:53:24 @mnist-dorefa.py:60] Binarizing weight conv3/W
+[0916 11:53:24 @mnist-dorefa.py:60] Binarizing weight towerp0/conv3/mul
+[0916 11:53:24 @mnist-dorefa.py:60] Binarizing weight fc0/W
+[0916 11:53:24 @mnist-dorefa.py:60] Binarizing weight towerp0/fc0/mul
+[0916 11:53:24 @mnist-dorefa.py:60] Binarizing weight fc1/W
+[0916 11:53:24 @mnist-dorefa.py:60] Binarizing weight towerp0/fc1/mul
+[0916 11:53:24 @base.py:109] Initializing graph variables ...
+[0916 11:53:26 @base.py:151] Starting all threads & procs ...
+[0916 11:53:26 @base.py:118] Start training with global_step=0
+100%|##############################################|468/468[03:16<00:00, 2.04it/s]
+100%|################################################|40/40[00:09<00:00, 4.21it/s]
+[0916 11:56:57 @stat.py:81] cost: 1.0484
+[0916 11:56:57 @stat.py:81] cross_entropy_loss: 1.0431
+[0916 11:56:57 @stat.py:81] learning_rate: 0.001
+[0916 11:56:57 @stat.py:81] regularize_loss: 0.0052578
+[0916 11:56:57 @stat.py:81] train_error: 0.25619
+[0916 11:56:57 @stat.py:81] validation_cost: 1.2031
+[0916 11:56:57 @stat.py:81] validation_error: 0.2859
+[0916 11:56:57 @group.py:40] Callbacks took 13.948 sec in total. ModelSaver: 4.442sec; InferenceRunner: 9.505sec
+[0916 11:56:57 @timer.py:46] Epoch 1, global_step=468 finished, time=210.77sec.
+100%|##############################################|468/468[03:12<00:00, 2.43it/s]
+100%|################################################|40/40[00:08<00:00, 5.36it/s]
+[0916 12:00:18 @stat.py:81] cost: 0.36938
+[0916 12:00:18 @stat.py:81] cross_entropy_loss: 0.36373
+[0916 12:00:18 @stat.py:81] learning_rate: 0.001
+[0916 12:00:18 @stat.py:81] regularize_loss: 0.0056524
+[0916 12:00:18 @stat.py:81] train_error: 0.098541
+[0916 12:00:18 @stat.py:81] validation_cost: 0.79081
+[0916 12:00:18 @stat.py:81] validation_error: 0.2509
+[0916 12:00:18 @group.py:40] Callbacks took 8.775 sec in total. InferenceRunner: 8.733sec
+[0916 12:00:18 @timer.py:46] Epoch 2, global_step=936 finished, time=201.06sec.
+100%|##############################################|468/468[03:06<00:00, 2.64it/s]
+100%|################################################|40/40[00:08<00:00, 4.61it/s]
+[0916 12:03:33 @stat.py:81] cost: 0.23737
+[0916 12:03:33 @stat.py:81] cross_entropy_loss: 0.23143
+[0916 12:03:33 @stat.py:81] learning_rate: 0.001
+[0916 12:03:33 @stat.py:81] regularize_loss: 0.0059342
+[0916 12:03:33 @stat.py:81] train_error: 0.066191
+[0916 12:03:33 @stat.py:81] validation_cost: 1.6431
+[0916 12:03:33 @stat.py:81] validation_error: 0.6143
+[0916 12:03:33 @group.py:40] Callbacks took 8.699 sec in total. InferenceRunner: 8.676sec
+[0916 12:03:33 @timer.py:46] Epoch 3, global_step=1404 finished, time=194.86sec.
+100%|##############################################|468/468[03:04<00:00, 2.46it/s]
+100%|################################################|40/40[00:08<00:00, 4.72it/s]
+[0916 12:06:46 @stat.py:81] cost: 0.20156
+[0916 12:06:46 @stat.py:81] cross_entropy_loss: 0.19537
+[0916 12:06:46 @stat.py:81] learning_rate: 0.001
+[0916 12:06:46 @stat.py:81] regularize_loss: 0.0061947
+[0916 12:06:46 @stat.py:81] train_error: 0.057378
+[0916 12:06:46 @stat.py:81] validation_cost: 0.86854
+[0916 12:06:46 @stat.py:81] validation_error: 0.2911
+[0916 12:06:46 @group.py:40] Callbacks took 8.497 sec in total. InferenceRunner: 8.474sec
+[0916 12:06:46 @timer.py:46] Epoch 4, global_step=1872 finished, time=192.69sec.
+100%|##############################################|468/468[04:33<00:00, 2.28it/s]
+100%|################################################|40/40[00:08<00:00, 5.03it/s]
+[0916 12:11:28 @stat.py:81] cost: 0.15434
+[0916 12:11:28 @stat.py:81] cross_entropy_loss: 0.14794
+[0916 12:11:28 @stat.py:81] learning_rate: 0.001
+[0916 12:11:28 @stat.py:81] regularize_loss: 0.0064068
+[0916 12:11:28 @stat.py:81] train_error: 0.043285
+[0916 12:11:28 @stat.py:81] validation_cost: 0.25685
+[0916 12:11:28 @stat.py:81] validation_error: 0.0585
+[0916 12:11:28 @group.py:40] Callbacks took 8.711 sec in total. InferenceRunner: 8.656sec
+[0916 12:11:28 @timer.py:46] Epoch 5, global_step=2340 finished, time=282.05sec.
+100%|##############################################|468/468[03:09<00:00, 2.78it/s]
+100%|################################################|40/40[00:08<00:00, 4.56it/s]
+[0916 12:14:45 @stat.py:81] cost: 0.14642
+[0916 12:14:45 @stat.py:81] cross_entropy_loss: 0.1398
+[0916 12:14:45 @stat.py:81] learning_rate: 0.001
+[0916 12:14:45 @stat.py:81] regularize_loss: 0.0066198
+[0916 12:14:45 @stat.py:81] train_error: 0.041981
+[0916 12:14:45 @stat.py:81] validation_cost: 1.7488
+[0916 12:14:45 @stat.py:81] validation_error: 0.6436
+[0916 12:14:45 @group.py:40] Callbacks took 8.816 sec in total. InferenceRunner: 8.769sec
+[0916 12:14:45 @timer.py:46] Epoch 6, global_step=2808 finished, time=197.84sec.
+100%|##############################################|468/468[03:06<00:00, 2.59it/s]
+100%|################################################|40/40[00:08<00:00, 4.70it/s]
+[0916 12:18:01 @stat.py:81] cost: 0.12896
+[0916 12:18:01 @stat.py:81] cross_entropy_loss: 0.1221
+[0916 12:18:01 @stat.py:81] learning_rate: 0.001
+[0916 12:18:01 @stat.py:81] regularize_loss: 0.0068559
+[0916 12:18:01 @stat.py:81] train_error: 0.036966
+[0916 12:18:01 @stat.py:81] validation_cost: 0.30537
+[0916 12:18:01 @stat.py:81] validation_error: 0.0798
+[0916 12:18:01 @group.py:40] Callbacks took 8.549 sec in total. InferenceRunner: 8.518sec
+[0916 12:18:01 @timer.py:46] Epoch 7, global_step=3276 finished, time=195.08sec.
+100%|##############################################|468/468[03:05<00:00, 2.39it/s]
+100%|################################################|40/40[00:08<00:00, 4.62it/s]
+[0916 12:21:14 @stat.py:81] cost: 0.12562
+[0916 12:21:14 @stat.py:81] cross_entropy_loss: 0.11852
+[0916 12:21:14 @stat.py:81] learning_rate: 0.001
+[0916 12:21:14 @stat.py:81] regularize_loss: 0.0071007
+[0916 12:21:14 @stat.py:81] train_error: 0.036843
+[0916 12:21:14 @stat.py:81] validation_cost: 1.1114
+[0916 12:21:14 @stat.py:81] validation_error: 0.3219
+[0916 12:21:14 @group.py:40] Callbacks took 8.709 sec in total. InferenceRunner: 8.659sec
+[0916 12:21:14 @timer.py:46] Epoch 8, global_step=3744 finished, time=193.92sec.
+100%|##############################################|468/468[59:42<00:00, 2.64it/s]
+100%|################################################|40/40[00:08<00:00, 4.52it/s]
+[0916 13:21:06 @stat.py:81] cost: 0.11639
+[0916 13:21:06 @stat.py:81] cross_entropy_loss: 0.10907
+[0916 13:21:06 @stat.py:81] learning_rate: 0.001
+[0916 13:21:06 @stat.py:81] regularize_loss: 0.0073251
+[0916 13:21:06 @stat.py:81] train_error: 0.031726
+[0916 13:21:06 @stat.py:81] validation_cost: 0.32071
+[0916 13:21:06 @stat.py:81] validation_error: 0.0898
+[0916 13:21:06 @group.py:40] Callbacks took 8.886 sec in total. InferenceRunner: 8.853sec
+[0916 13:21:06 @timer.py:46] Epoch 9, global_step=4212 finished, time=3591.61sec.
+100%|##############################################|468/468[03:08<00:00, 2.37it/s]
+100%|################################################|40/40[00:09<00:00, 4.44it/s]
+[0916 13:24:23 @stat.py:81] cost: 0.10679
+[0916 13:24:23 @stat.py:81] cross_entropy_loss: 0.099292
+[0916 13:24:23 @stat.py:81] learning_rate: 0.0003
+[0916 13:24:23 @stat.py:81] regularize_loss: 0.0074963
+[0916 13:24:23 @stat.py:81] train_error: 0.030055
+[0916 13:24:23 @stat.py:81] validation_cost: 0.30043
+[0916 13:24:23 @stat.py:81] validation_error: 0.0772
+[0916 13:24:23 @group.py:40] Callbacks took 9.042 sec in total. InferenceRunner: 9.010sec
+[0916 13:24:23 @timer.py:46] Epoch 10, global_step=4680 finished, time=197.36sec.
+100%|##############################################|468/468[03:17<00:00, 2.47it/s]100%|################################################|40/40[00:09<00:00, 4.38it/s]
+[0916 13:27:51 @stat.py:81] cost: 0.090757
+[0916 13:27:51 @stat.py:81] cross_entropy_loss: 0.083198
+[0916 13:27:51 @stat.py:81] learning_rate: 0.0003
+[0916 13:27:51 @stat.py:81] regularize_loss: 0.0075593
+[0916 13:27:51 @stat.py:81] train_error: 0.024973
+[0916 13:27:51 @stat.py:81] validation_cost: 0.11382
+[0916 13:27:51 @stat.py:81] validation_error: 0.0314
+[0916 13:27:51 @group.py:40] Callbacks took 9.185 sec in total. InferenceRunner: 9.134sec
+[0916 13:27:51 @timer.py:46] Epoch 11, global_step=5148 finished, time=207.14sec.
+100%|##############################################|468/468[03:17<00:00, 2.34it/s]
+100%|################################################|40/40[00:08<00:00, 4.76it/s]
+[0916 13:31:17 @stat.py:81] cost: 0.084169
+[0916 13:31:17 @stat.py:81] cross_entropy_loss: 0.076588
+[0916 13:31:17 @stat.py:81] learning_rate: 0.0003
+[0916 13:31:17 @stat.py:81] regularize_loss: 0.0075808
+[0916 13:31:17 @stat.py:81] train_error: 0.022727
+[0916 13:31:17 @stat.py:81] validation_cost: 0.08589
+[0916 13:31:17 @stat.py:81] validation_error: 0.023
+[0916 13:31:17 @group.py:40] Callbacks took 8.446 sec in total. InferenceRunner: 8.401sec
+[0916 13:31:17 @timer.py:46] Epoch 12, global_step=5616 finished, time=206.30sec.
+100%|#################################################|468/468[03:16<00:00, 2.11it/s]
+100%|###################################################|40/40[00:09<00:00, 4.41it/s]
+[0916 13:34:43 @stat.py:81] cost: 0.079041
+[0916 13:34:43 @stat.py:81] cross_entropy_loss: 0.071454
+[0916 13:34:43 @stat.py:81] learning_rate: 0.0003
+[0916 13:34:43 @stat.py:81] regularize_loss: 0.0075861
+[0916 13:34:43 @stat.py:81] train_error: 0.021221
+[0916 13:34:43 @stat.py:81] validation_cost: 0.12861
+[0916 13:34:43 @stat.py:81] validation_error: 0.0357
+[0916 13:34:43 @group.py:40] Callbacks took 9.099 sec in total. InferenceRunner: 9.075sec
+[0916 13:34:43 @timer.py:46] Epoch 13, global_step=6084 finished, time=205.93sec.
+100%|#################################################|468/468[03:18<00:00, 2.35it/s]
+100%|###################################################|40/40[00:09<00:00, 4.24it/s]
+[0916 13:38:11 @stat.py:81] cost: 0.082241
+[0916 13:38:11 @stat.py:81] cross_entropy_loss: 0.074668
+[0916 13:38:11 @stat.py:81] learning_rate: 0.0003
+[0916 13:38:11 @stat.py:81] regularize_loss: 0.0075732
+[0916 13:38:11 @stat.py:81] train_error: 0.022828
+[0916 13:38:11 @stat.py:81] validation_cost: 0.17465
+[0916 13:38:11 @stat.py:81] validation_error: 0.0491
+[0916 13:38:11 @group.py:40] Callbacks took 9.481 sec in total. InferenceRunner: 9.436sec
+[0916 13:38:11 @timer.py:46] Epoch 14, global_step=6552 finished, time=208.27sec.
+100%|#################################################################################|468/468[03:19<00:00, 2.34it/s]
+100%|###################################################################################|40/40[00:09<00:00, 4.33it/s]
+[0916 13:41:40 @stat.py:81] cost: 0.077163
+[0916 13:41:40 @stat.py:81] cross_entropy_loss: 0.069614
+[0916 13:41:40 @stat.py:81] learning_rate: 0.0003
+[0916 13:41:40 @stat.py:81] regularize_loss: 0.007549
+[0916 13:41:40 @stat.py:81] train_error: 0.021304
+[0916 13:41:40 @stat.py:81] validation_cost: 0.16301
+[0916 13:41:40 @stat.py:81] validation_error: 0.0482
+[0916 13:41:40 @group.py:40] Callbacks took 9.286 sec in total. InferenceRunner: 9.240sec
+[0916 13:41:40 @timer.py:46] Epoch 15, global_step=7020 finished, time=208.93sec.
+100%|#################################################################################|468/468[03:14<00:00, 2.38it/s]
+100%|###################################################################################|40/40[00:08<00:00, 4.94it/s]
+[0916 13:45:03 @stat.py:81] cost: 0.076683
+[0916 13:45:03 @stat.py:81] cross_entropy_loss: 0.069152
+[0916 13:45:03 @stat.py:81] learning_rate: 0.0003
+[0916 13:45:03 @stat.py:81] regularize_loss: 0.0075309
+[0916 13:45:03 @stat.py:81] train_error: 0.021122
+[0916 13:45:03 @stat.py:81] validation_cost: 0.080477
+[0916 13:45:03 @stat.py:81] validation_error: 0.0209
+[0916 13:45:03 @group.py:40] Callbacks took 8.724 sec in total. InferenceRunner: 8.678sec
+[0916 13:45:03 @timer.py:46] Epoch 16, global_step=7488 finished, time=203.13sec.
+100%|#################################################################################|468/468[03:11<00:00, 2.45it/s]
+100%|###################################################################################|40/40[00:08<00:00, 5.15it/s]
+[0916 13:48:23 @stat.py:81] cost: 0.078929
+[0916 13:48:23 @stat.py:81] cross_entropy_loss: 0.07144
+[0916 13:48:23 @stat.py:81] learning_rate: 0.0003
+[0916 13:48:23 @stat.py:81] regularize_loss: 0.007489
+[0916 13:48:23 @stat.py:81] train_error: 0.021931
+[0916 13:48:23 @stat.py:81] validation_cost: 0.087091
+[0916 13:48:23 @stat.py:81] validation_error: 0.0224
+[0916 13:48:23 @group.py:40] Callbacks took 8.911 sec in total. InferenceRunner: 8.868sec
+[0916 13:48:23 @timer.py:46] Epoch 17, global_step=7956 finished, time=199.94sec.
+100%|#################################################################################|468/468[03:09<00:00, 2.46it/s]
+100%|###################################################################################|40/40[00:08<00:00, 4.61it/s]
+[0916 13:51:41 @stat.py:81] cost: 0.071173
+[0916 13:51:41 @stat.py:81] cross_entropy_loss: 0.063725
+[0916 13:51:41 @stat.py:81] learning_rate: 0.0003
+[0916 13:51:41 @stat.py:81] regularize_loss: 0.0074473
+[0916 13:51:41 @stat.py:81] train_error: 0.019485
+[0916 13:51:41 @stat.py:81] validation_cost: 0.15411
+[0916 13:51:41 @stat.py:81] validation_error: 0.0437
+[0916 13:51:41 @group.py:40] Callbacks took 8.725 sec in total. InferenceRunner: 8.688sec
+[0916 13:51:41 @timer.py:46] Epoch 18, global_step=8424 finished, time=198.26sec.
+100%|#################################################################################|468/468[03:13<00:00, 2.42it/s]
+100%|###################################################################################|40/40[00:09<00:00, 4.41it/s]
+[0916 13:55:04 @stat.py:81] cost: 0.072294
+[0916 13:55:04 @stat.py:81] cross_entropy_loss: 0.06491
+[0916 13:55:04 @stat.py:81] learning_rate: 0.0003
+[0916 13:55:04 @stat.py:81] regularize_loss: 0.0073838
+[0916 13:55:04 @stat.py:81] train_error: 0.020341
+[0916 13:55:04 @stat.py:81] validation_cost: 0.14885
+[0916 13:55:04 @stat.py:81] validation_error: 0.0445
+[0916 13:55:04 @group.py:40] Callbacks took 9.132 sec in total. InferenceRunner: 9.078sec
+[0916 13:55:04 @timer.py:46] Epoch 19, global_step=8892 finished, time=202.91sec.
+100%|#################################################################################|468/468[03:10<00:00, 2.46it/s]
+100%|###################################################################################|40/40[00:06<00:00, 6.00it/s]
+[0916 13:58:21 @stat.py:81] cost: 0.065281
+[0916 13:58:21 @stat.py:81] cross_entropy_loss: 0.057969
+[0916 13:58:21 @stat.py:81] learning_rate: 9e-05
+[0916 13:58:21 @stat.py:81] regularize_loss: 0.0073119
+[0916 13:58:21 @stat.py:81] train_error: 0.017895
+[0916 13:58:21 @stat.py:81] validation_cost: 0.071744
+[0916 13:58:21 @stat.py:81] validation_error: 0.0193
+[0916 13:58:21 @group.py:40] Callbacks took 6.697 sec in total. InferenceRunner: 6.664sec
+[0916 13:58:21 @timer.py:46] Epoch 20, global_step=9360 finished, time=196.97sec.
+100%|#################################################################################|468/468[02:29<00:00, 2.85it/s]
+100%|###################################################################################|40/40[00:06<00:00, 5.85it/s]
+[0916 14:00:57 @stat.py:81] cost: 0.062695
+[0916 14:00:57 @stat.py:81] cross_entropy_loss: 0.055422
+[0916 14:00:57 @stat.py:81] learning_rate: 9e-05
+[0916 14:00:57 @stat.py:81] regularize_loss: 0.0072732
+[0916 14:00:57 @stat.py:81] train_error: 0.017947
+[0916 14:00:57 @stat.py:81] validation_cost: 0.060149
+[0916 14:00:57 @stat.py:81] validation_error: 0.0175
+[0916 14:00:57 @group.py:40] Callbacks took 6.864 sec in total. InferenceRunner: 6.837sec
+[0916 14:00:57 @timer.py:46] Epoch 21, global_step=9828 finished, time=155.94sec.
+100%|#################################################################################|468/468[02:37<00:00, 2.62it/s]
+100%|###################################################################################|40/40[00:07<00:00, 5.20it/s]
+[0916 14:03:43 @stat.py:81] cost: 0.054675
+[0916 14:03:43 @stat.py:81] cross_entropy_loss: 0.047432
+[0916 14:03:43 @stat.py:81] learning_rate: 9e-05
+[0916 14:03:43 @stat.py:81] regularize_loss: 0.007243
+[0916 14:03:43 @stat.py:81] train_error: 0.013993
+[0916 14:03:43 @stat.py:81] validation_cost: 0.060682
+[0916 14:03:43 @stat.py:81] validation_error: 0.0178
+[0916 14:03:43 @group.py:40] Callbacks took 7.730 sec in total. InferenceRunner: 7.690sec
+[0916 14:03:43 @timer.py:46] Epoch 22, global_step=10296 finished, time=165.69sec.
+100%|#################################################################################|468/468[02:27<00:00, 2.40it/s]
+100%|###################################################################################|40/40[00:07<00:00, 5.53it/s]
+[0916 14:06:18 @stat.py:81] cost: 0.055621
+[0916 14:06:18 @stat.py:81] cross_entropy_loss: 0.048414
+[0916 14:06:18 @stat.py:81] learning_rate: 9e-05
+[0916 14:06:18 @stat.py:81] regularize_loss: 0.0072075
+[0916 14:06:18 @stat.py:81] train_error: 0.013867
+[0916 14:06:18 @stat.py:81] validation_cost: 0.068347
+[0916 14:06:18 @stat.py:81] validation_error: 0.018
+[0916 14:06:18 @group.py:40] Callbacks took 7.270 sec in total. InferenceRunner: 7.235sec
+[0916 14:06:18 @timer.py:46] Epoch 23, global_step=10764 finished, time=154.78sec.
+100%|#################################################################################|468/468[02:32<00:00, 3.14it/s]
+100%|###################################################################################|40/40[00:06<00:00, 5.74it/s]
+[0916 14:08:57 @stat.py:81] cost: 0.06045
+[0916 14:08:57 @stat.py:81] cross_entropy_loss: 0.053294
+[0916 14:08:57 @stat.py:81] learning_rate: 9e-05
+[0916 14:08:57 @stat.py:81] regularize_loss: 0.0071567
+[0916 14:08:57 @stat.py:81] train_error: 0.016066
+[0916 14:08:57 @stat.py:81] validation_cost: 0.058047
+[0916 14:08:57 @stat.py:81] validation_error: 0.015
+[0916 14:08:57 @group.py:40] Callbacks took 7.012 sec in total. InferenceRunner: 6.973sec
+[0916 14:08:57 @timer.py:46] Epoch 24, global_step=11232 finished, time=159.64sec.
+100%|#################################################################################|468/468[02:34<00:00, 2.91it/s]
+100%|###################################################################################|40/40[00:07<00:00, 5.50it/s]
+[0916 14:11:39 @stat.py:81] cost: 0.053858
+[0916 14:11:39 @stat.py:81] cross_entropy_loss: 0.046747
+[0916 14:11:39 @stat.py:81] learning_rate: 9e-05
+[0916 14:11:39 @stat.py:81] regularize_loss: 0.0071112
+[0916 14:11:39 @stat.py:81] train_error: 0.014527
+[0916 14:11:39 @stat.py:81] validation_cost: 0.062511
+[0916 14:11:39 @stat.py:81] validation_error: 0.0167
+[0916 14:11:39 @group.py:40] Callbacks took 7.315 sec in total. InferenceRunner: 7.269sec
+[0916 14:11:39 @timer.py:46] Epoch 25, global_step=11700 finished, time=161.77sec.
+100%|#################################################################################|468/468[02:30<00:00, 3.23it/s]
+100%|###################################################################################|40/40[00:06<00:00, 6.06it/s]
+[0916 14:14:16 @stat.py:81] cost: 0.055512
+[0916 14:14:16 @stat.py:81] cross_entropy_loss: 0.048459
+[0916 14:14:16 @stat.py:81] learning_rate: 9e-05
+[0916 14:14:16 @stat.py:81] regularize_loss: 0.007053
+[0916 14:14:16 @stat.py:81] train_error: 0.015003
+[0916 14:14:16 @stat.py:81] validation_cost: 0.067673
+[0916 14:14:16 @stat.py:81] validation_error: 0.0199
+[0916 14:14:16 @group.py:40] Callbacks took 6.636 sec in total. InferenceRunner: 6.598sec
+[0916 14:14:16 @timer.py:46] Epoch 26, global_step=12168 finished, time=156.86sec.
+100%|#################################################################################|468/468[02:28<00:00, 3.38it/s]
+100%|###################################################################################|40/40[00:06<00:00, 5.93it/s]
+[0916 14:16:51 @stat.py:81] cost: 0.053283
+[0916 14:16:51 @stat.py:81] cross_entropy_loss: 0.046295
+[0916 14:16:51 @stat.py:81] learning_rate: 9e-05
+[0916 14:16:51 @stat.py:81] regularize_loss: 0.0069882
+[0916 14:16:51 @stat.py:81] train_error: 0.013716
+[0916 14:16:51 @stat.py:81] validation_cost: 0.053423
+[0916 14:16:51 @stat.py:81] validation_error: 0.0157
+[0916 14:16:51 @group.py:40] Callbacks took 6.780 sec in total. InferenceRunner: 6.743sec
+[0916 14:16:51 @timer.py:46] Epoch 27, global_step=12636 finished, time=155.54sec.
+100%|#################################################################################|468/468[02:23<00:00, 3.39it/s]
+100%|###################################################################################|40/40[00:06<00:00, 6.01it/s]
+[0916 14:19:21 @stat.py:81] cost: 0.056115
+[0916 14:19:21 @stat.py:81] cross_entropy_loss: 0.04919
+[0916 14:19:21 @stat.py:81] learning_rate: 9e-05
+[0916 14:19:21 @stat.py:81] regularize_loss: 0.0069251
+[0916 14:19:21 @stat.py:81] train_error: 0.015109
+[0916 14:19:21 @stat.py:81] validation_cost: 0.062554
+[0916 14:19:21 @stat.py:81] validation_error: 0.0169
+[0916 14:19:21 @group.py:40] Callbacks took 6.676 sec in total. InferenceRunner: 6.661sec
+[0916 14:19:21 @timer.py:46] Epoch 28, global_step=13104 finished, time=149.94sec.
+100%|#################################################################################|468/468[02:23<00:00, 3.38it/s]
+100%|###################################################################################|40/40[00:06<00:00, 6.24it/s]
+[0916 14:21:51 @stat.py:81] cost: 0.059365
+[0916 14:21:51 @stat.py:81] cross_entropy_loss: 0.052511
+[0916 14:21:51 @stat.py:81] learning_rate: 9e-05
+[0916 14:21:51 @stat.py:81] regularize_loss: 0.0068534
+[0916 14:21:51 @stat.py:81] train_error: 0.015718
+[0916 14:21:51 @stat.py:81] validation_cost: 0.065686
+[0916 14:21:51 @stat.py:81] validation_error: 0.0193
+[0916 14:21:51 @group.py:40] Callbacks took 6.437 sec in total. InferenceRunner: 6.412sec
+[0916 14:21:51 @timer.py:46] Epoch 29, global_step=13572 finished, time=149.76sec.
+100%|#################################################################################|468/468[02:25<00:00, 3.39it/s]
+100%|###################################################################################|40/40[00:06<00:00, 6.80it/s]
+[0916 14:24:23 @stat.py:81] cost: 0.05655
+[0916 14:24:23 @stat.py:81] cross_entropy_loss: 0.049774
+[0916 14:24:23 @stat.py:81] learning_rate: 2.7e-05
+[0916 14:24:23 @stat.py:81] regularize_loss: 0.006776
+[0916 14:24:23 @stat.py:81] train_error: 0.015647
+[0916 14:24:23 @stat.py:81] validation_cost: 0.068443
+[0916 14:24:23 @stat.py:81] validation_error: 0.0197
+[0916 14:24:23 @group.py:40] Callbacks took 6.553 sec in total. InferenceRunner: 6.517sec
+[0916 14:24:23 @timer.py:46] Epoch 30, global_step=14040 finished, time=152.09sec.
+100%|#################################################################################|468/468[02:18<00:00, 3.40it/s]
+100%|###################################################################################|40/40[00:06<00:00, 6.24it/s]
+[0916 14:26:48 @stat.py:81] cost: 0.051956
+[0916 14:26:48 @stat.py:81] cross_entropy_loss: 0.045214
+[0916 14:26:48 @stat.py:81] learning_rate: 2.7e-05
+[0916 14:26:48 @stat.py:81] regularize_loss: 0.0067417
+[0916 14:26:48 @stat.py:81] train_error: 0.013772
+[0916 14:26:48 @stat.py:81] validation_cost: 0.053701
+[0916 14:26:48 @stat.py:81] validation_error: 0.0156
+[0916 14:26:48 @group.py:40] Callbacks took 6.434 sec in total. InferenceRunner: 6.414sec
+[0916 14:26:48 @timer.py:46] Epoch 31, global_step=14508 finished, time=145.22sec.
+100%|#################################################################################|468/468[02:23<00:00, 2.86it/s]
+100%|###################################################################################|40/40[00:06<00:00, 6.03it/s]
+[0916 14:29:19 @stat.py:81] cost: 0.049875
+[0916 14:29:19 @stat.py:81] cross_entropy_loss: 0.04316
+[0916 14:29:19 @stat.py:81] learning_rate: 2.7e-05
+[0916 14:29:19 @stat.py:81] regularize_loss: 0.0067149
+[0916 14:29:19 @stat.py:81] train_error: 0.013251
+[0916 14:29:19 @stat.py:81] validation_cost: 0.053788
+[0916 14:29:19 @stat.py:81] validation_error: 0.0152
+[0916 14:29:19 @group.py:40] Callbacks took 6.669 sec in total. InferenceRunner: 6.638sec
+[0916 14:29:19 @timer.py:46] Epoch 32, global_step=14976 finished, time=150.64sec.
+100%|#################################################################################|468/468[02:32<00:00, 3.22it/s]
+100%|###################################################################################|40/40[00:06<00:00, 6.01it/s]
+[0916 14:31:59 @stat.py:81] cost: 0.048451
+[0916 14:31:59 @stat.py:81] cross_entropy_loss: 0.041766
+[0916 14:31:59 @stat.py:81] learning_rate: 2.7e-05
+[0916 14:31:59 @stat.py:81] regularize_loss: 0.0066849
+[0916 14:31:59 @stat.py:81] train_error: 0.012716
+[0916 14:31:59 @stat.py:81] validation_cost: 0.057762
+[0916 14:31:59 @stat.py:81] validation_error: 0.0162
+[0916 14:31:59 @group.py:40] Callbacks took 6.682 sec in total. InferenceRunner: 6.660sec
+[0916 14:31:59 @timer.py:46] Epoch 33, global_step=15444 finished, time=159.45sec.
+100%|#################################################################################|468/468[02:28<00:00, 3.09it/s]
+100%|###################################################################################|40/40[00:07<00:00, 4.78it/s]
+[0916 14:34:35 @stat.py:81] cost: 0.047529
+[0916 14:34:35 @stat.py:81] cross_entropy_loss: 0.04088
+[0916 14:34:35 @stat.py:81] learning_rate: 2.7e-05
+[0916 14:34:35 @stat.py:81] regularize_loss: 0.0066492
+[0916 14:34:35 @stat.py:81] train_error: 0.012633
+[0916 14:34:35 @stat.py:81] validation_cost: 0.0504
+[0916 14:34:35 @stat.py:81] validation_error: 0.0147
+[0916 14:34:35 @group.py:40] Callbacks took 7.882 sec in total. InferenceRunner: 7.847sec
+[0916 14:34:35 @timer.py:46] Epoch 34, global_step=15912 finished, time=156.83sec.
+100%|#################################################################################|468/468[02:26<00:00, 3.19it/s]
+100%|###################################################################################|40/40[00:06<00:00, 6.05it/s]
+[0916 14:37:09 @stat.py:81] cost: 0.049138
+[0916 14:37:09 @stat.py:81] cross_entropy_loss: 0.042526
+[0916 14:37:09 @stat.py:81] learning_rate: 2.7e-05
+[0916 14:37:09 @stat.py:81] regularize_loss: 0.0066117
+[0916 14:37:09 @stat.py:81] train_error: 0.012475
+[0916 14:37:09 @stat.py:81] validation_cost: 0.051105
+[0916 14:37:09 @stat.py:81] validation_error: 0.0149
+[0916 14:37:09 @group.py:40] Callbacks took 6.645 sec in total. InferenceRunner: 6.615sec
+[0916 14:37:09 @timer.py:46] Epoch 35, global_step=16380 finished, time=153.53sec.
+100%|#################################################################################|468/468[02:26<00:00, 3.13it/s]
+100%|###################################################################################|40/40[00:07<00:00, 5.21it/s]
+[0916 14:39:43 @stat.py:81] cost: 0.049381
+[0916 14:39:43 @stat.py:81] cross_entropy_loss: 0.04281
+[0916 14:39:43 @stat.py:81] learning_rate: 2.7e-05
+[0916 14:39:43 @stat.py:81] regularize_loss: 0.0065707
+[0916 14:39:43 @stat.py:81] train_error: 0.013933
+[0916 14:39:43 @stat.py:81] validation_cost: 0.054261
+[0916 14:39:43 @stat.py:81] validation_error: 0.015
+[0916 14:39:43 @group.py:40] Callbacks took 7.729 sec in total. InferenceRunner: 7.678sec
+[0916 14:39:43 @timer.py:46] Epoch 36, global_step=16848 finished, time=153.84sec.
+100%|#################################################################################|468/468[02:21<00:00, 3.40it/s]
+100%|###################################################################################|40/40[00:06<00:00, 6.26it/s]
+[0916 14:42:11 @stat.py:81] cost: 0.048242
+[0916 14:42:11 @stat.py:81] cross_entropy_loss: 0.041712
+[0916 14:42:11 @stat.py:81] learning_rate: 2.7e-05
+[0916 14:42:11 @stat.py:81] regularize_loss: 0.0065299
+[0916 14:42:11 @stat.py:81] train_error: 0.012397
+[0916 14:42:11 @stat.py:81] validation_cost: 0.049919
+[0916 14:42:11 @stat.py:81] validation_error: 0.0128
+[0916 14:42:11 @group.py:40] Callbacks took 6.418 sec in total. InferenceRunner: 6.392sec
+[0916 14:42:11 @timer.py:46] Epoch 37, global_step=17316 finished, time=147.77sec.
+100%|#################################################################################|468/468[02:31<00:00, 3.26it/s]
+100%|###################################################################################|40/40[00:07<00:00, 5.70it/s]
+[0916 14:44:49 @stat.py:81] cost: 0.047825
+[0916 14:44:49 @stat.py:81] cross_entropy_loss: 0.041335
+[0916 14:44:49 @stat.py:81] learning_rate: 2.7e-05
+[0916 14:44:49 @stat.py:81] regularize_loss: 0.0064895
+[0916 14:44:49 @stat.py:81] train_error: 0.012372
+[0916 14:44:49 @stat.py:81] validation_cost: 0.076152
+[0916 14:44:49 @stat.py:81] validation_error: 0.0215
+[0916 14:44:49 @group.py:40] Callbacks took 7.053 sec in total. InferenceRunner: 7.019sec
+[0916 14:44:49 @timer.py:46] Epoch 38, global_step=17784 finished, time=158.70sec.
+100%|#################################################################################|468/468[02:31<00:00, 3.03it/s]
+100%|###################################################################################|40/40[00:06<00:00, 5.79it/s]
+[0916 14:47:28 @stat.py:81] cost: 0.049292
+[0916 14:47:28 @stat.py:81] cross_entropy_loss: 0.042839
+[0916 14:47:28 @stat.py:81] learning_rate: 2.7e-05
+[0916 14:47:28 @stat.py:81] regularize_loss: 0.0064527
+[0916 14:47:28 @stat.py:81] train_error: 0.013342
+[0916 14:47:28 @stat.py:81] validation_cost: 0.056329
+[0916 14:47:28 @stat.py:81] validation_error: 0.0135
+[0916 14:47:28 @group.py:40] Callbacks took 6.944 sec in total. InferenceRunner: 6.911sec
+[0916 14:47:28 @timer.py:46] Epoch 39, global_step=18252 finished, time=158.64sec.
+100%|#################################################################################|468/468[02:21<00:00, 3.18it/s]
+100%|###################################################################################|40/40[00:06<00:00, 6.71it/s]
+[0916 14:49:56 @stat.py:81] cost: 0.049186
+[0916 14:49:56 @stat.py:81] cross_entropy_loss: 0.042772
+[0916 14:49:56 @stat.py:81] learning_rate: 8.1e-06
+[0916 14:49:56 @stat.py:81] regularize_loss: 0.0064132
+[0916 14:49:56 @stat.py:81] train_error: 0.013015
+[0916 14:49:56 @stat.py:81] validation_cost: 0.048847
+[0916 14:49:56 @stat.py:81] validation_error: 0.0132
+[0916 14:49:56 @group.py:40] Callbacks took 6.719 sec in total. InferenceRunner: 6.682sec
+[0916 14:49:56 @timer.py:46] Epoch 40, global_step=18720 finished, time=148.23sec.
+100%|#################################################################################|468/468[02:30<00:00, 3.04it/s]
+100%|###################################################################################|40/40[00:06<00:00, 5.87it/s]
+[0916 14:52:33 @stat.py:81] cost: 0.044693
+[0916 14:52:33 @stat.py:81] cross_entropy_loss: 0.038297
+[0916 14:52:33 @stat.py:81] learning_rate: 8.1e-06
+[0916 14:52:33 @stat.py:81] regularize_loss: 0.0063958
+[0916 14:52:33 @stat.py:81] train_error: 0.011779
+[0916 14:52:33 @stat.py:81] validation_cost: 0.048558
+[0916 14:52:33 @stat.py:81] validation_error: 0.013
+[0916 14:52:33 @group.py:40] Callbacks took 6.849 sec in total. InferenceRunner: 6.811sec
+[0916 14:52:33 @timer.py:46] Epoch 41, global_step=19188 finished, time=157.28sec.
+100%|#################################################################################|468/468[02:27<00:00, 3.19it/s]
+100%|###################################################################################|40/40[00:07<00:00, 5.59it/s]
+[0916 14:55:08 @stat.py:81] cost: 0.045002
+[0916 14:55:08 @stat.py:81] cross_entropy_loss: 0.038618
+[0916 14:55:08 @stat.py:81] learning_rate: 8.1e-06
+[0916 14:55:08 @stat.py:81] regularize_loss: 0.006384
+[0916 14:55:08 @stat.py:81] train_error: 0.011487
+[0916 14:55:08 @stat.py:81] validation_cost: 0.04906
+[0916 14:55:08 @stat.py:81] validation_error: 0.0137
+[0916 14:55:08 @group.py:40] Callbacks took 7.193 sec in total. InferenceRunner: 7.160sec
+[0916 14:55:08 @timer.py:46] Epoch 42, global_step=19656 finished, time=154.65sec.
+100%|#################################################################################|468/468[02:23<00:00, 3.28it/s]
+100%|###################################################################################|40/40[00:06<00:00, 5.97it/s]
+[0916 14:57:38 @stat.py:81] cost: 0.044769
+[0916 14:57:38 @stat.py:81] cross_entropy_loss: 0.038398
+[0916 14:57:38 @stat.py:81] learning_rate: 8.1e-06
+[0916 14:57:38 @stat.py:81] regularize_loss: 0.0063716
+[0916 14:57:38 @stat.py:81] train_error: 0.011299
+[0916 14:57:38 @stat.py:81] validation_cost: 0.048532
+[0916 14:57:38 @stat.py:81] validation_error: 0.0127
+[0916 14:57:38 @group.py:40] Callbacks took 6.735 sec in total. InferenceRunner: 6.698sec
+[0916 14:57:38 @timer.py:46] Epoch 43, global_step=20124 finished, time=150.40sec.
+100%|#################################################################################|468/468[02:23<00:00, 3.31it/s]
+100%|###################################################################################|40/40[00:06<00:00, 6.46it/s]
+[0916 15:00:08 @stat.py:81] cost: 0.042045
+[0916 15:00:08 @stat.py:81] cross_entropy_loss: 0.035687
+[0916 15:00:08 @stat.py:81] learning_rate: 8.1e-06
+[0916 15:00:08 @stat.py:81] regularize_loss: 0.0063584
+[0916 15:00:08 @stat.py:81] train_error: 0.01102
+[0916 15:00:08 @stat.py:81] validation_cost: 0.053699
+[0916 15:00:08 @stat.py:81] validation_error: 0.0139
+[0916 15:00:08 @group.py:40] Callbacks took 6.227 sec in total. InferenceRunner: 6.190sec
+[0916 15:00:08 @timer.py:46] Epoch 44, global_step=20592 finished, time=149.85sec.
+100%|#################################################################################|468/468[02:23<00:00, 3.30it/s]
+100%|###################################################################################|40/40[00:06<00:00, 6.04it/s]
+[0916 15:02:39 @stat.py:81] cost: 0.045688
+[0916 15:02:39 @stat.py:81] cross_entropy_loss: 0.039343
+[0916 15:02:39 @stat.py:81] learning_rate: 8.1e-06
+[0916 15:02:39 @stat.py:81] regularize_loss: 0.0063449
+[0916 15:02:39 @stat.py:81] train_error: 0.012507
+[0916 15:02:39 @stat.py:81] validation_cost: 0.050014
+[0916 15:02:39 @stat.py:81] validation_error: 0.0143
+[0916 15:02:39 @group.py:40] Callbacks took 6.667 sec in total. InferenceRunner: 6.625sec
+[0916 15:02:39 @timer.py:46] Epoch 45, global_step=21060 finished, time=150.37sec.
+100%|#################################################################################|468/468[02:30<00:00, 3.05it/s]
+100%|###################################################################################|40/40[00:06<00:00, 5.80it/s]
+[0916 15:05:16 @stat.py:81] cost: 0.047199
+[0916 15:05:16 @stat.py:81] cross_entropy_loss: 0.040867
+[0916 15:05:16 @stat.py:81] learning_rate: 8.1e-06
+[0916 15:05:16 @stat.py:81] regularize_loss: 0.0063319
+[0916 15:05:16 @stat.py:81] train_error: 0.011538
+[0916 15:05:16 @stat.py:81] validation_cost: 0.049922
+[0916 15:05:16 @stat.py:81] validation_error: 0.0145
+[0916 15:05:16 @group.py:40] Callbacks took 6.943 sec in total. InferenceRunner: 6.900sec
+[0916 15:05:16 @timer.py:46] Epoch 46, global_step=21528 finished, time=157.78sec.
+100%|#################################################################################|468/468[02:25<00:00, 3.37it/s]
+100%|###################################################################################|40/40[00:06<00:00, 6.22it/s]
+[0916 15:07:48 @stat.py:81] cost: 0.04347
+[0916 15:07:48 @stat.py:81] cross_entropy_loss: 0.037151
+[0916 15:07:48 @stat.py:81] learning_rate: 8.1e-06
+[0916 15:07:48 @stat.py:81] regularize_loss: 0.0063196
+[0916 15:07:48 @stat.py:81] train_error: 0.010671
+[0916 15:07:48 @stat.py:81] validation_cost: 0.054503
+[0916 15:07:48 @stat.py:81] validation_error: 0.0152
+[0916 15:07:48 @group.py:40] Callbacks took 6.490 sec in total. InferenceRunner: 6.431sec
+[0916 15:07:48 @timer.py:46] Epoch 47, global_step=21996 finished, time=151.90sec.
+100%|#################################################################################|468/468[02:20<00:00, 3.33it/s]
+100%|###################################################################################|40/40[00:06<00:00, 6.23it/s]
+[0916 15:10:15 @stat.py:81] cost: 0.046632
+[0916 15:10:15 @stat.py:81] cross_entropy_loss: 0.040324
+[0916 15:10:15 @stat.py:81] learning_rate: 8.1e-06
+[0916 15:10:15 @stat.py:81] regularize_loss: 0.0063075
+[0916 15:10:15 @stat.py:81] train_error: 0.012333
+[0916 15:10:15 @stat.py:81] validation_cost: 0.045795
+[0916 15:10:15 @stat.py:81] validation_error: 0.0129
+[0916 15:10:15 @group.py:40] Callbacks took 6.491 sec in total. InferenceRunner: 6.425sec
+[0916 15:10:15 @timer.py:46] Epoch 48, global_step=22464 finished, time=146.96sec.
+100%|#################################################################################|468/468[02:21<00:00, 3.13it/s]
+100%|###################################################################################|40/40[00:07<00:00, 5.27it/s]
+[0916 15:12:44 @stat.py:81] cost: 0.046889
+[0916 15:12:44 @stat.py:81] cross_entropy_loss: 0.040593
+[0916 15:12:44 @stat.py:81] learning_rate: 8.1e-06
+[0916 15:12:44 @stat.py:81] regularize_loss: 0.0062959
+[0916 15:12:44 @stat.py:81] train_error: 0.013033
+[0916 15:12:44 @stat.py:81] validation_cost: 0.049301
+[0916 15:12:44 @stat.py:81] validation_error: 0.0143
+[0916 15:12:44 @group.py:40] Callbacks took 7.633 sec in total. InferenceRunner: 7.594sec
+[0916 15:12:44 @timer.py:46] Epoch 49, global_step=22932 finished, time=148.92sec.
+100%|#################################################################################|468/468[02:25<00:00, 3.35it/s]
+100%|###################################################################################|40/40[00:06<00:00, 6.20it/s]
+[0916 15:15:16 @stat.py:81] cost: 0.043364
+[0916 15:15:16 @stat.py:81] cross_entropy_loss: 0.037078
+[0916 15:15:16 @stat.py:81] learning_rate: 2.43e-06
+[0916 15:15:16 @stat.py:81] regularize_loss: 0.0062854
+[0916 15:15:16 @stat.py:81] train_error: 0.010906
+[0916 15:15:16 @stat.py:81] validation_cost: 0.048132
+[0916 15:15:16 @stat.py:81] validation_error: 0.0134
+[0916 15:15:16 @group.py:40] Callbacks took 6.511 sec in total. InferenceRunner: 6.455sec
+[0916 15:15:16 @timer.py:46] Epoch 50, global_step=23400 finished, time=152.16sec.
+100%|#################################################################################|468/468[02:26<00:00, 2.89it/s]
+100%|###################################################################################|40/40[00:06<00:00, 5.74it/s]
+[0916 15:17:50 @stat.py:81] cost: 0.041773
+[0916 15:17:50 @stat.py:81] cross_entropy_loss: 0.035492
+[0916 15:17:50 @stat.py:81] learning_rate: 2.43e-06
+[0916 15:17:50 @stat.py:81] regularize_loss: 0.0062806
+[0916 15:17:50 @stat.py:81] train_error: 0.010723
+[0916 15:17:50 @stat.py:81] validation_cost: 0.051873
+[0916 15:17:50 @stat.py:81] validation_error: 0.0124
+[0916 15:17:50 @group.py:40] Callbacks took 7.017 sec in total. InferenceRunner: 6.970sec
+[0916 15:17:50 @timer.py:46] Epoch 51, global_step=23868 finished, time=153.17sec.
+100%|#################################################################################|468/468[02:28<00:00, 3.02it/s]
+100%|###################################################################################|40/40[00:06<00:00, 5.83it/s]
+[0916 15:20:25 @stat.py:81] cost: 0.041191
+[0916 15:20:25 @stat.py:81] cross_entropy_loss: 0.034913
+[0916 15:20:25 @stat.py:81] learning_rate: 2.43e-06
+[0916 15:20:25 @stat.py:81] regularize_loss: 0.0062772
+[0916 15:20:25 @stat.py:81] train_error: 0.010571
+[0916 15:20:25 @stat.py:81] validation_cost: 0.049164
+[0916 15:20:25 @stat.py:81] validation_error: 0.0129
+[0916 15:20:25 @group.py:40] Callbacks took 6.897 sec in total. InferenceRunner: 6.857sec
+[0916 15:20:25 @timer.py:46] Epoch 52, global_step=24336 finished, time=154.96sec.
+100%|#################################################################################|468/468[02:23<00:00, 3.27it/s]
+100%|###################################################################################|40/40[00:06<00:00, 5.89it/s]
+[0916 15:22:55 @stat.py:81] cost: 0.045581
+[0916 15:22:55 @stat.py:81] cross_entropy_loss: 0.039307
+[0916 15:22:55 @stat.py:81] learning_rate: 2.43e-06
+[0916 15:22:55 @stat.py:81] regularize_loss: 0.006274
+[0916 15:22:55 @stat.py:81] train_error: 0.012571
+[0916 15:22:55 @stat.py:81] validation_cost: 0.048413
+[0916 15:22:55 @stat.py:81] validation_error: 0.0124
+[0916 15:22:55 @group.py:40] Callbacks took 6.843 sec in total. InferenceRunner: 6.797sec
+[0916 15:22:55 @timer.py:46] Epoch 53, global_step=24804 finished, time=150.07sec.
+100%|#################################################################################|468/468[02:26<00:00, 3.32it/s]
+100%|###################################################################################|40/40[00:06<00:00, 6.77it/s]
+[0916 15:25:28 @stat.py:81] cost: 0.042015
+[0916 15:25:28 @stat.py:81] cross_entropy_loss: 0.035745
+[0916 15:25:28 @stat.py:81] learning_rate: 2.43e-06
+[0916 15:25:28 @stat.py:81] regularize_loss: 0.0062707
+[0916 15:25:28 @stat.py:81] train_error: 0.010837
+[0916 15:25:28 @stat.py:81] validation_cost: 0.049652
+[0916 15:25:28 @stat.py:81] validation_error: 0.013
+[0916 15:25:28 @group.py:40] Callbacks took 6.673 sec in total. InferenceRunner: 6.618sec
+[0916 15:25:28 @timer.py:46] Epoch 54, global_step=25272 finished, time=152.97sec.
+100%|#################################################################################|468/468[02:28<00:00, 2.88it/s]
+100%|###################################################################################|40/40[00:07<00:00, 5.44it/s]
+[0916 15:28:03 @stat.py:81] cost: 0.042726
+[0916 15:28:03 @stat.py:81] cross_entropy_loss: 0.036459
+[0916 15:28:03 @stat.py:81] learning_rate: 2.43e-06
+[0916 15:28:03 @stat.py:81] regularize_loss: 0.0062674
+[0916 15:28:03 @stat.py:81] train_error: 0.011011
+[0916 15:28:03 @stat.py:81] validation_cost: 0.049249
+[0916 15:28:03 @stat.py:81] validation_error: 0.0124
+[0916 15:28:03 @group.py:40] Callbacks took 7.386 sec in total. InferenceRunner: 7.349sec
+[0916 15:28:03 @timer.py:46] Epoch 55, global_step=25740 finished, time=155.66sec.
+100%|#################################################################################|468/468[02:26<00:00, 3.38it/s]
+100%|###################################################################################|40/40[00:06<00:00, 6.33it/s]
+[0916 15:30:36 @stat.py:81] cost: 0.041653
+[0916 15:30:36 @stat.py:81] cross_entropy_loss: 0.035388
+[0916 15:30:36 @stat.py:81] learning_rate: 2.43e-06
+[0916 15:30:36 @stat.py:81] regularize_loss: 0.0062642
+[0916 15:30:36 @stat.py:81] train_error: 0.010352
+[0916 15:30:36 @stat.py:81] validation_cost: 0.049317
+[0916 15:30:36 @stat.py:81] validation_error: 0.0136
+[0916 15:30:36 @group.py:40] Callbacks took 6.367 sec in total. InferenceRunner: 6.318sec
+[0916 15:30:36 @timer.py:46] Epoch 56, global_step=26208 finished, time=153.06sec.
+100%|#################################################################################|468/468[02:22<00:00, 3.06it/s]
+100%|###################################################################################|40/40[00:06<00:00, 5.73it/s]
+[0916 15:33:06 @stat.py:81] cost: 0.04284
+[0916 15:33:06 @stat.py:81] cross_entropy_loss: 0.036578
+[0916 15:33:06 @stat.py:81] learning_rate: 2.43e-06
+[0916 15:33:06 @stat.py:81] regularize_loss: 0.0062612
+[0916 15:33:06 @stat.py:81] train_error: 0.011336
+[0916 15:33:06 @stat.py:81] validation_cost: 0.045846
+[0916 15:33:06 @stat.py:81] validation_error: 0.0128
+[0916 15:33:06 @group.py:40] Callbacks took 7.029 sec in total. InferenceRunner: 6.988sec
+[0916 15:33:06 @timer.py:46] Epoch 57, global_step=26676 finished, time=149.63sec.
+100%|#################################################################################|468/468[02:29<00:00, 3.10it/s]
+100%|###################################################################################|40/40[00:07<00:00, 5.30it/s]
+[0916 15:35:43 @stat.py:81] cost: 0.042925
+[0916 15:35:43 @stat.py:81] cross_entropy_loss: 0.036667
+[0916 15:35:43 @stat.py:81] learning_rate: 2.43e-06
+[0916 15:35:43 @stat.py:81] regularize_loss: 0.0062582
+[0916 15:35:43 @stat.py:81] train_error: 0.010539
+[0916 15:35:43 @stat.py:81] validation_cost: 0.051601
+[0916 15:35:43 @stat.py:81] validation_error: 0.014
+[0916 15:35:43 @group.py:40] Callbacks took 7.590 sec in total. InferenceRunner: 7.545sec
+[0916 15:35:43 @timer.py:46] Epoch 58, global_step=27144 finished, time=157.25sec.
+100%|#################################################################################|468/468[02:30<00:00, 3.18it/s]
+100%|###################################################################################|40/40[00:06<00:00, 5.97it/s]
+[0916 15:38:21 @stat.py:81] cost: 0.043617
+[0916 15:38:21 @stat.py:81] cross_entropy_loss: 0.037361
+[0916 15:38:21 @stat.py:81] learning_rate: 2.43e-06
+[0916 15:38:21 @stat.py:81] regularize_loss: 0.0062552
+[0916 15:38:21 @stat.py:81] train_error: 0.010529
+[0916 15:38:21 @stat.py:81] validation_cost: 0.051815
+[0916 15:38:21 @stat.py:81] validation_error: 0.0143
+[0916 15:38:21 @group.py:40] Callbacks took 6.743 sec in total. InferenceRunner: 6.697sec
+[0916 15:38:21 @timer.py:46] Epoch 59, global_step=27612 finished, time=157.55sec.
+100%|#################################################################################|468/468[02:25<00:00, 3.37it/s]
+100%|###################################################################################|40/40[00:06<00:00, 5.71it/s]
+[0916 15:40:53 @stat.py:81] cost: 0.043213
+[0916 15:40:53 @stat.py:81] cross_entropy_loss: 0.036961
+[0916 15:40:53 @stat.py:81] learning_rate: 7.29e-07
+[0916 15:40:53 @stat.py:81] regularize_loss: 0.0062522
+[0916 15:40:53 @stat.py:81] train_error: 0.011542
+[0916 15:40:53 @stat.py:81] validation_cost: 0.046798
+[0916 15:40:53 @stat.py:81] validation_error: 0.0133
+[0916 15:40:53 @group.py:40] Callbacks took 7.045 sec in total. InferenceRunner: 7.001sec
+[0916 15:40:53 @timer.py:46] Epoch 60, global_step=28080 finished, time=152.75sec.
+100%|#################################################################################|468/468[02:29<00:00, 3.08it/s]
+100%|###################################################################################|40/40[00:06<00:00, 6.00it/s]
+[0916 15:43:30 @stat.py:81] cost: 0.041799
+[0916 15:43:30 @stat.py:81] cross_entropy_loss: 0.035548
+[0916 15:43:30 @stat.py:81] learning_rate: 7.29e-07
+[0916 15:43:30 @stat.py:81] regularize_loss: 0.0062509
+[0916 15:43:30 @stat.py:81] train_error: 0.010891
+[0916 15:43:30 @stat.py:81] validation_cost: 0.046708
+[0916 15:43:30 @stat.py:81] validation_error: 0.0126
+[0916 15:43:30 @group.py:40] Callbacks took 6.715 sec in total. InferenceRunner: 6.671sec
+[0916 15:43:30 @timer.py:46] Epoch 61, global_step=28548 finished, time=156.31sec.
+100%|#################################################################################|468/468[02:25<00:00, 3.25it/s]
+100%|###################################################################################|40/40[00:07<00:00, 5.56it/s]
+[0916 15:46:03 @stat.py:81] cost: 0.043165
+[0916 15:46:03 @stat.py:81] cross_entropy_loss: 0.036915
+[0916 15:46:03 @stat.py:81] learning_rate: 7.29e-07
+[0916 15:46:03 @stat.py:81] regularize_loss: 0.00625
+[0916 15:46:03 @stat.py:81] train_error: 0.011441
+[0916 15:46:03 @stat.py:81] validation_cost: 0.050659
+[0916 15:46:03 @stat.py:81] validation_error: 0.014
+[0916 15:46:03 @group.py:40] Callbacks took 7.225 sec in total. InferenceRunner: 7.193sec
+[0916 15:46:03 @timer.py:46] Epoch 62, global_step=29016 finished, time=153.02sec.
